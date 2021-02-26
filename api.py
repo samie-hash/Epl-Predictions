@@ -3,6 +3,7 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 import pickle
+import os
 import numpy as np
 
 app = Flask(__name__)
@@ -41,6 +42,7 @@ class FootballPredict(Resource):
 
 api.add_resource(FootballPredict, '/predict')
 
+port = int(os.environ.get('PORT', 5000))
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(port=port, debug=True)
