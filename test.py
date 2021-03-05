@@ -1,7 +1,7 @@
 import requests
 
 BASE = 'https://epl-predictions-api.herokuapp.com/'
-LOCAL_HOST = 'http://127.0.0.1:5000/'
+
 data = {
     'HomeTeam': 'Fulham',
     'AwayTeam': 'Arsenal',
@@ -16,5 +16,5 @@ data = {
     'PastShotsOnTargetDiff': -0.900
 }
 
-response = requests.get(LOCAL_HOST + 'predict', data)
+response = requests.get(BASE + 'predict', data)
 print(response.json())
